@@ -1,5 +1,5 @@
 //
-//  UIScreen+Ext.swift
+//  UIScreen+Extension.swift
 //  CommonUiUtils
 //
 //  Created by clding on 2021/3/31.

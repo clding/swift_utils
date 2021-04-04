@@ -9,14 +9,14 @@ import UIKit
 
 class ImageUtils: NSObject {
     
-    class func image(withColor color: UIColor, size: CGSize) -> UIImage {
+    public class func image(withColor color: UIColor, size: CGSize) -> UIImage {
         return UIGraphicsImageRenderer(size: size).image { rendererContext in
             color.setFill()
             rendererContext.fill(CGRect(origin: .zero, size: size))
         }
     }
     
-    class func image(withHexString colorStr: String, size: CGSize) -> UIImage {
+    public class func image(withHexString colorStr: String, size: CGSize) -> UIImage {
         return UIGraphicsImageRenderer(size: size).image { rendererContext in
             let color = UIColor(colorStr)
             color.setFill()
@@ -24,7 +24,7 @@ class ImageUtils: NSObject {
         }
     }
 
-    class func image(withOriImage oriImg: UIImage, ringColor: UIColor, ringBorder border: CGFloat) -> UIImage? {
+    public class func image(withOriImage oriImg: UIImage, ringColor: UIColor, ringBorder border: CGFloat) -> UIImage? {
         if oriImg.pngData() == nil {
             return nil
         }
@@ -52,7 +52,7 @@ class ImageUtils: NSObject {
         }
     }
     
-    class func clipWithImageRect(clipFrame: CGRect, oriImage: UIImage) -> UIImage {
+    public class func clipWithImageRect(clipFrame: CGRect, oriImage: UIImage) -> UIImage {
         let imgScale = oriImage.scale
         let rect_Scale = CGRect(x: clipFrame.origin.x * imgScale, y: clipFrame.origin.y * imgScale, width: clipFrame.size.width * imgScale, height: clipFrame.size.height * imgScale)
         
@@ -62,7 +62,7 @@ class ImageUtils: NSObject {
         return img_Clip
     }
     
-    class func image(fromView view: UIView?) -> UIImage? {
+    public class func image(fromView view: UIView?) -> UIImage? {
         guard view != nil else {
             return nil
         }
@@ -75,7 +75,7 @@ class ImageUtils: NSObject {
         return image!
     }
  
-    class func image(fromGradients gradientColors: [UIColor], size: CGSize = CGSize(width: 10, height: 10), locations: [Float] = [], isVertical: Bool = true) -> UIImage
+    public class func image(fromGradients gradientColors: [UIColor], size: CGSize = CGSize(width: 10, height: 10), locations: [Float] = [], isVertical: Bool = true) -> UIImage
     {
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
         let context = UIGraphicsGetCurrentContext()

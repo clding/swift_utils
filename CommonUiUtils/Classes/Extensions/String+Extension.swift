@@ -8,35 +8,35 @@
 import UIKit
 
 extension String {
-    func localized(tableName: String? = nil, bundle: Bundle = Bundle.main, value: String = "", comment: String = "") -> String{
+    public func localized(tableName: String? = nil, bundle: Bundle = Bundle.main, value: String = "", comment: String = "") -> String{
         return NSLocalizedString(self, tableName: tableName, bundle: bundle, value: value, comment: comment)
     }
     
-    var pathExtension: String {
+    public var pathExtension: String {
         get {
             return (self as NSString).pathExtension
         }
     }
     
-    var deleteExtension: String {
+    public var deleteExtension: String {
         get {
             return (self as NSString).deletingPathExtension
         }
     }
     
-    var lastPathComponent: String {
+    public var lastPathComponent: String {
         get {
             return (self as NSString).lastPathComponent
         }
     }
     
-    var deleteLastComponent: String {
+    public var deleteLastComponent: String {
         get {
             return (self as NSString).deletingLastPathComponent
         }
     }
     
-    var bool: Bool {
+    public var bool: Bool {
         get {
             let lowercase = self.lowercased()
             if lowercase == "true" {
@@ -52,7 +52,7 @@ extension String {
         }
     }
     
-    var float: CGFloat {
+    public var float: CGFloat {
         get {
             return CGFloat(Float(self) ?? 0)
         }

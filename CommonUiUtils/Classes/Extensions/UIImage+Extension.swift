@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIImage {
-    func aspectFill(inSize: CGSize) -> UIImage? {
+    public func aspectFill(inSize: CGSize) -> UIImage? {
         if size.width * size.height == 0 || inSize.width * inSize.height == 0 {
             return nil
         }
@@ -31,7 +31,7 @@ extension UIImage {
         return nil
     }
     
-    func fixedOrientation() -> UIImage {
+    public func fixedOrientation() -> UIImage {
         if imageOrientation == .up {
             return self
         }

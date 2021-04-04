@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIColor {    
-    convenience init(_ hexString: String) {
+    convenience public init(_ hexString: String) {
         let colorStr = hexString.isEmpty ? "FFFFFF" : hexString
         
         let trimmedStr = colorStr.trimmingCharacters(in: .whitespacesAndNewlines)

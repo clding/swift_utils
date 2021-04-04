@@ -8,20 +8,20 @@
 import UIKit
 import SnapKit
 
-class BaseCustomView: UIView {
+public class BaseCustomView: UIView {
     var __Cust_Container_View: UIView!
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         self.baseInit()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
         self.baseInit()
     }
 
-    func baseInit() {
+    public func baseInit() {
         self.__Cust_Container_View = self.loadXib()
         self.addSubview(self.__Cust_Container_View)
         self.__Cust_Container_View.translatesAutoresizingMaskIntoConstraints = false

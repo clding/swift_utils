@@ -43,6 +43,24 @@ extension UIView {
             bounds.size.height = newValue
         }
     }
+    
+    var size: CGSize {
+        get {
+            return self.bounds.size
+        }
+        set {
+            self.frame = CGRect(origin: self.origin, size: newValue)
+        }
+    }
+
+    var origin: CGPoint {
+        get {
+            return self.frame.origin
+        }
+        set {
+            self.frame = CGRect(origin: newValue, size: self.size)
+        }
+    }
 
     func setCorner(radius: CGFloat, borderColor: UIColor = UIColor.clear, borderWidth: CGFloat = 0.0, masksToBounds: Bool = true) {
         self.layer.cornerRadius = radius

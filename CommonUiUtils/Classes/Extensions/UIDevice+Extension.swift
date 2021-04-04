@@ -32,5 +32,16 @@ extension UIDevice {
         }
         return defaultVal
     }
-  
+    
+    public static func isIphone5SE() -> Bool {
+        if iPhoneDevice() {
+            if (UIScreen.width > UIScreen.height) {
+                return UIScreen.width == 568
+            } else {
+                return UIScreen.height == 568
+            }
+        }
+        return false
+    }
+    
 }

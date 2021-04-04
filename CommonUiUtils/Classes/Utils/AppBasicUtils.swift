@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AppBasicUtils: NSObject {    
+public class AppBasicUtils: NSObject {    
     public class func countryCode() -> String {
         let countryCode = NSLocale.current.regionCode
         return countryCode ?? ""

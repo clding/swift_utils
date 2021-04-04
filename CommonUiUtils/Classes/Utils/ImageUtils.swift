@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ImageUtils: NSObject {
+public class ImageUtils: NSObject {
     
     public class func image(withColor color: UIColor, size: CGSize) -> UIImage {
         return UIGraphicsImageRenderer(size: size).image { rendererContext in

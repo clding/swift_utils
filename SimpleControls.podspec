@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "SimpleControls"
-  spec.version      = "0.1.0"
+  spec.version      = "0.1.1"
   spec.summary      = "some simple control utils"
 
   # This description is used to generate tags and improve search results.
@@ -90,7 +90,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "CommonUiUtils/Controls/**/*.{swift, xib}"
+  spec.source_files  = "CommonUiUtils/Classes/**/*.{swift, xib}"
   # spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"

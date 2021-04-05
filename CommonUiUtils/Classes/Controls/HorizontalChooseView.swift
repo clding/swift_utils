@@ -73,7 +73,7 @@ extension HorizontalChooseView: UIPickerViewDataSource, UIPickerViewDelegate {
         //修改字体大小， 颜色
         let arrStr = NSAttributedString(string: components[row], attributes: [NSAttributedString.Key.font: textFont, NSAttributedString.Key.foregroundColor: textColor, NSAttributedString.Key.backgroundColor: UIColor.clear])
   
-        let modeLabel = UILabel(frame: CGRect(origin: .zero, size: CGSize(width: componentSize.height, height: componentSize.width)))
+        let modeLabel = UILabel(frame: CGRect(origin: .zero, size: CGSize(width: componentSize.width, height: componentSize.height)))
         modeLabel.textAlignment = .center
 
         modeLabel.attributedText = arrStr

@@ -9,7 +9,7 @@ import UIKit
 
 extension UIView {
     
-    var x: CGFloat {
+    public var x: CGFloat {
         get {
             return frame.origin.x
         }
@@ -17,7 +17,7 @@ extension UIView {
             frame.origin.x = newValue
         }
     }
-    var y: CGFloat {
+    public var y: CGFloat {
         get {
             return frame.origin.y
         }
@@ -26,7 +26,7 @@ extension UIView {
         }
     }
     
-    var width: CGFloat {
+    public var width: CGFloat {
         get {
             return bounds.size.width
         }
@@ -35,7 +35,7 @@ extension UIView {
         }
     }
     
-    var height: CGFloat {
+    public var height: CGFloat {
         get {
             return bounds.size.height
         }
@@ -44,7 +44,7 @@ extension UIView {
         }
     }
     
-    var size: CGSize {
+    public var size: CGSize {
         get {
             return self.bounds.size
         }
@@ -53,7 +53,7 @@ extension UIView {
         }
     }
 
-    var origin: CGPoint {
+    public var origin: CGPoint {
         get {
             return self.frame.origin
         }
@@ -62,7 +62,7 @@ extension UIView {
         }
     }
 
-    func setCorner(radius: CGFloat, borderColor: UIColor = UIColor.clear, borderWidth: CGFloat = 0.0, masksToBounds: Bool = true) {
+    public func setCorner(radius: CGFloat, borderColor: UIColor = UIColor.clear, borderWidth: CGFloat = 0.0, masksToBounds: Bool = true) {
         self.layer.cornerRadius = radius
         self.layer.borderColor = borderColor.cgColor
         self.layer.borderWidth = borderWidth

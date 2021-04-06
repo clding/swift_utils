@@ -8,19 +8,19 @@
 import UIKit
 
 extension Array where Element: Equatable {
-    mutating func removeFromFirst(_ object: Element) {
+    mutating public func removeFromFirst(_ object: Element) {
         if let index = firstIndex(of: object) {
             remove(at: index)
         }
     }
     
-    mutating func removeFromLast(_ object: Element) {
+    mutating public func removeFromLast(_ object: Element) {
         if let index = lastIndex(of: object) {
             remove(at: index)
         }
     }
 
-    func random() -> Element? {
+    public func random() -> Element? {
         if self.count == 0 {
             return nil
         } else if self.count == 1 {

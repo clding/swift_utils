@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "SimpleControls"
-  spec.version      = "0.1.1"
+  spec.version      = "0.1.5"
   spec.summary      = "some simple control utils"
 
   # This description is used to generate tags and improve search results.
@@ -105,7 +105,7 @@ Pod::Spec.new do |spec|
   #
 
   # spec.resource  = "icon.png"
-  # spec.resources = "Resources/*.png"
+  spec.resources = "CommonUiUtils/Classes/**/*.{xib, png}"
 
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
 

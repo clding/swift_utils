@@ -8,11 +8,11 @@
 import UIKit
 
 extension UIScreen {
-    static var width: CGFloat {
+    public static var width: CGFloat {
         return Self.main.bounds.size.width
     }
     
-    static var height: CGFloat {
+    public static var height: CGFloat {
         return Self.main.bounds.size.height
     }
 }

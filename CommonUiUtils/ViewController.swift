@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import Vision
 
 class ViewController: UIViewController, UIPickerViewDelegate, HorizontalChooseProtocol {
     @IBOutlet weak var listPicker: HorizontalChooseView!
-    
+    @IBOutlet weak var languagesView: sc_LanguageListView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -17,6 +19,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, HorizontalChoosePr
         listPicker.backgroundColor = .clear
         listPicker.pickerDelegate = self
         listPicker.components = dataList
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let supportedList = try? VNRecognizeTextRequest.supportedRecognitionLanguages(for: .accurate, revision: VNTrackObjectRequestRevision2)
+        languagesView.dataList = supportedList ?? []
+        languagesView.setSelectedLanguage(text: supportedList?.last ?? "")
+        
     }
     
     var dataList: [String] = ["aaaaaaa", "bbbbbbb", "ccccccc", "ddddddd", "eeeeeee", "ff", "hh"]

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,15 +25,26 @@
                                     <constraint firstAttribute="height" constant="35" id="bNF-w8-vDK"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUq-Fs-whz" customClass="sc_LanguageListView" customModule="CommonUiUtils" customModuleProvider="target">
+                                <rect key="frame" x="20" y="199" width="374" height="300"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="l9h-0o-Rks"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3hJ-oN-Hq8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Gqk-iE-Ju6"/>
                             <constraint firstItem="3hJ-oN-Hq8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cNy-eH-ZaI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hUq-Fs-whz" secondAttribute="trailing" constant="20" id="nRM-Rg-JgB"/>
+                            <constraint firstItem="hUq-Fs-whz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="o8r-44-L6L"/>
+                            <constraint firstItem="hUq-Fs-whz" firstAttribute="top" secondItem="3hJ-oN-Hq8" secondAttribute="bottom" constant="120" id="zpE-rD-WaM"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="languagesView" destination="hUq-Fs-whz" id="JUH-7d-NWk"/>
                         <outlet property="listPicker" destination="3hJ-oN-Hq8" id="693-kc-B5b"/>
                     </connections>
                 </viewController>
@@ -40,4 +53,9 @@
             <point key="canvasLocation" x="86.956521739130437" y="80.357142857142847"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

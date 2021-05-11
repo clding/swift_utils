@@ -18,6 +18,9 @@ class sc_LanguageTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        let bundle = Bundle(for: type(of: self))
+        self.checkedFlagView.image = UIImage(named: "sc_language_checked", in: bundle, compatibleWith: nil)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

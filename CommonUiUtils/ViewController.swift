@@ -7,6 +7,7 @@
 
 import UIKit
 import Vision
+import SimpleControls
 
 class ViewController: UIViewController, UIPickerViewDelegate, HorizontalChooseProtocol {
     @IBOutlet weak var listPicker: HorizontalChooseView!

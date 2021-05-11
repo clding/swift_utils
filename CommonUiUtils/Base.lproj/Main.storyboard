@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3hJ-oN-Hq8" customClass="HorizontalChooseView" customModule="CommonUiUtils" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3hJ-oN-Hq8" customClass="HorizontalChooseView" customModule="SimpleControls">
                                 <rect key="frame" x="57" y="44" width="300" height="35"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -25,7 +25,7 @@
                                     <constraint firstAttribute="height" constant="35" id="bNF-w8-vDK"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUq-Fs-whz" customClass="sc_LanguageListView" customModule="CommonUiUtils" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUq-Fs-whz" customClass="sc_LanguageListView" customModule="SimpleControls">
                                 <rect key="frame" x="20" y="199" width="374" height="300"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>

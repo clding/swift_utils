@@ -7,5 +7,6 @@ target 'CommonUiUtils' do
 
   # Pods for CommonUiUtils
   pod 'SnapKit', '~> 5.0.0'
+  pod 'SimpleControls', :path => '.'
 
 end

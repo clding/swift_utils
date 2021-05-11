@@ -4,12 +4,11 @@
 #
 #  To learn more about Podspec attributes see https://guides.cocoapods.org/syntax/podspec.html
 #  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
-#
 
 Pod::Spec.new do |spec|
 
   spec.name         = "SimpleControls"
-  spec.version      = "0.1.7"
+  spec.version      = "0.1.8"
   spec.summary      = "some simple control utils"
 
   # spec.description  = <<-DESC
@@ -45,7 +44,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "CommonUiUtils/Classes/**/*.{swift, xib}"
+  spec.source_files  = "CommonUiUtils/Classes/**/*.{swift, h, m}"
   # spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
@@ -60,7 +59,7 @@ Pod::Spec.new do |spec|
   #
 
   # spec.resource  = "icon.png"
-  spec.resources = "CommonUiUtils/Classes/**/*.{xib, png}"
+  spec.resources = ['CommonUiUtils/Classes/**/*.{png,bundle,xib,nib}']
 
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
 

@@ -22,20 +22,19 @@ public class HorizontalChooseView: BaseCustomView {
 
     public var components: [String] = [] {
         didSet {
+            resetComponentSize()
             reloadAll()
         }
     }
     
-    private var componentSize: CGSize {
-        get {
-            let maxWidth = maxComponentWidth()
-            if maxWidth > 100 {
-                return CGSize(width: maxWidth, height: 25)
-            } else {
-                return CGSize(width: 100, height: 25)
-            }
+    public var componentSize: CGSize = CGSize(width: 100, height: 25) {
+        didSet {
+            resetComponentSize()
+            reloadAll()
         }
     }
+    
+    private var innerComponentSize = CGSize(width: 100, height: 25)
     
     public var textColor: UIColor = .white
     public var textFont: UIFont = UIFont.systemFont(ofSize: 15, weight: .semibold)
@@ -62,14 +61,14 @@ public class HorizontalChooseView: BaseCustomView {
         }
     }
     
-    private func maxComponentWidth() -> CGFloat {
-        var maxVal: CGFloat = 100
+    private func resetComponentSize() {
+        var maxVal: CGFloat = componentSize.width
         for str in components {
             let arrStr = NSAttributedString(string: str, attributes: [NSAttributedString.Key.font: textFont, NSAttributedString.Key.foregroundColor: textColor, NSAttributedString.Key.backgroundColor: UIColor.clear])
             let currWidth = arrStr.size().width
-            maxVal = max(maxVal, currWidth)
+            maxVal = max(maxVal, (currWidth + 6))
         }
-        return ceil(maxVal + 6)
+        innerComponentSize = CGSize(width: ceil(maxVal), height: componentSize.height)
     }
 }
 
@@ -88,7 +87,7 @@ extension HorizontalChooseView: UIPickerViewDataSource, UIPickerViewDelegate {
         //修改字体大小， 颜色
         let arrStr = NSAttributedString(string: components[row], attributes: [NSAttributedString.Key.font: textFont, NSAttributedString.Key.foregroundColor: textColor, NSAttributedString.Key.backgroundColor: UIColor.clear])
   
-        let modeLabel = UILabel(frame: CGRect(origin: .zero, size: CGSize(width: componentSize.width, height: componentSize.height)))
+        let modeLabel = UILabel(frame: CGRect(origin: .zero, size: CGSize(width: innerComponentSize.width, height: innerComponentSize.height)))
         modeLabel.textAlignment = .center
 
         modeLabel.attributedText = arrStr
@@ -101,11 +100,11 @@ extension HorizontalChooseView: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     public func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return componentSize.width
+        return innerComponentSize.width
     }
     
     public func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-        return componentSize.height
+        return innerComponentSize.height
     }
     
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -127,7 +126,7 @@ extension HorizontalChooseView: UIPickerViewDataSource, UIPickerViewDelegate {
                             break
                         }
                     }
-                } else if subView.bounds.size.height  > componentSize.width {
+                } else if subView.bounds.size.height  > innerComponentSize.width {
                     didSetSelectedBgColor = true
                     subView.backgroundColor = selectedBgColor
                 }

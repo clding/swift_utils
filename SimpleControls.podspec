@@ -8,7 +8,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "SimpleControls"
-  spec.version      = "0.1.9"
+  spec.version      = "0.2.0"
   spec.summary      = "some simple control utils"
 
   # spec.description  = <<-DESC

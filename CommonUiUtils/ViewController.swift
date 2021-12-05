@@ -31,7 +31,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, HorizontalChoosePr
         
     }
     
-    var dataList: [String] = ["aaaaaaa", "bbbbbbb", "ccccccc", "ddddddd", "eeeeeee", "ff", "hh"]
+    var dataList: [String] = ["aaaaaaa", "bbbbbbb", "cccccccccccccc", "ddddddd", "eeeeeee", "ff", "hh"]
 
     func pickerView(_ pickerView: HorizontalChooseView, didSelectRow row: Int, inComponent component: Int) {
         Swift.debugPrint("picker view selected row: \(row), data: \(dataList[row])")

@@ -26,9 +26,14 @@ public class HorizontalChooseView: BaseCustomView {
         }
     }
     
-    public var componentSize: CGSize = CGSize(width: 100, height: 25) {
-        didSet {
-            reloadAll()
+    private var componentSize: CGSize {
+        get {
+            let maxWidth = maxComponentWidth()
+            if maxWidth > 100 {
+                return CGSize(width: maxWidth, height: 25)
+            } else {
+                return CGSize(width: 100, height: 25)
+            }
         }
     }
     
@@ -55,6 +60,16 @@ public class HorizontalChooseView: BaseCustomView {
             picker.reloadAllComponents()
             clearSelectedBg()
         }
+    }
+    
+    private func maxComponentWidth() -> CGFloat {
+        var maxVal: CGFloat = 100
+        for str in components {
+            let arrStr = NSAttributedString(string: str, attributes: [NSAttributedString.Key.font: textFont, NSAttributedString.Key.foregroundColor: textColor, NSAttributedString.Key.backgroundColor: UIColor.clear])
+            let currWidth = arrStr.size().width
+            maxVal = max(maxVal, currWidth)
+        }
+        return ceil(maxVal + 6)
     }
 }
 
